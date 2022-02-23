@@ -16,22 +16,22 @@ spec:
     metadata:
       labels:
         tier: frontend
-spec:
-  containers:
-  - image: supergiantkir/animals:bear
-    name: app1
-    volumeMounts:
-    - mountPath: /storage
+    spec:
+      containers:
+      - image: supergiantkir/animals:bear
+      name: app1
+      volumeMounts:
+      - mountPath: /storage
+        name: app-storage
+      - image: yanivomc/spring-music:latest
+      name: app2
+      volumeMounts:
+      - mountPath: /storage
       name: app-storage
-  - image: yanivomc/spring-music:latest
-    name: app2
-    volumeMounts:
-    - mountPath: /storage
-      name: app-storage
-volumes:
-  - name: app-storage
-    hostPath:
+     volumes:
+     - name: app-storage
+      hostPath:
       # directory location on host
-      path: /tmp/files
-      # this field is optional
-      type: DirectoryOrCreate
+        path: /tmp/files
+       # this field is optional
+        type: DirectoryOrCreate
