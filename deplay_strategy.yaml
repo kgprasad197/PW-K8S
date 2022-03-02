@@ -21,7 +21,7 @@ spec:
         - containerPort: 80
   strategy:
     type: RollingUpdate
-    MinReadySeconds:5
     rollingUpdate:
+      MinReadySeconds:5
       maxSurge: 1
       maxUnavailable: 0
