@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: animals-deployment
+  name: moose-deployment
 spec:
   selector:
     matchLabels:
